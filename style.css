@@ -34,10 +34,12 @@ Desktop: 1440px
 
 /* Master component container */
 
+@media (min-width: 300px) { /* Mobile */
+
 .container {
   background-color: #FFFFFF;
   border-radius: 10px;
-  height: 520px;
+  height: 85%;
   width: 87%;
   display: flex;
   flex-direction: column;
@@ -50,7 +52,7 @@ Desktop: 1440px
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 10px 10px 0px 0px;
-    height: 200px;
+    height: 180px;
   }
 
   .container__text-container {
@@ -58,6 +60,49 @@ Desktop: 1440px
     flex-direction: column;
     flex-grow: 1;
   }
+
+}
+
+@media (min-width: 768px) { /* Tablet */
+
+  .container {
+    flex-direction: row;
+    height: 250px;
+    width: 75%;
+  }
+  
+    .container__image {
+      width: 450px;
+      height: 100%;
+      border-radius: 10px 0px 0px 10px;
+    }
+
+    .container__text-container {
+      font: inherit;
+    }
+}
+
+@media (min-width: 1024px) { /* Laptop */
+
+  .container {
+    width: 65%;
+    height: 270px;
+  }
+
+    .container__image {
+      width: 600px;
+    }
+
+}
+
+@media (min-width: 1440px) { /* Wide laptop */
+  
+  .container {
+    width: 60%;
+  }
+
+}
+
 
 /* Text container */
 
@@ -67,13 +112,13 @@ Desktop: 1440px
 }
 
   .text-container__text h1 {
-    font-size: 1rem;
+    font-size: 0.95rem;
     color: var(--very-dark-grayish-blue);
   }
 
   .text-container__text p {
     color: var(--desaturated-dark-blue);
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     line-height: 1.5;
     margin: 0px;
   }
@@ -85,6 +130,34 @@ Desktop: 1440px
   border-radius: 0px 0px 10px 10px;
   height: 75px;
   padding: 0% 7.5% 0% 7.5%;
+}
+
+@media (min-width: 768px) { /* tablet */
+
+  .text-container__text h1 {
+    font-size: 1.1rem;
+  }
+
+  .text-container__text p {
+    font-size: 0.7rem;
+  }
+
+}
+
+@media (min-width: 1024px) { /* laptop */
+
+  .text-container__text h1 {
+    font-size: 1.2rem;
+  }
+
+  .text-container__text p {
+    font-size: 0.8rem;
+  }
+
+  .text-container__profile-container {
+    padding-bottom: 10px;
+  }
+
 }
 
 
@@ -99,6 +172,14 @@ Desktop: 1440px
     display: block;
     height: 3rem;
   }
+
+@media (min-width: 768px){
+
+  .profile-container__photo {
+    flex-grow: 0.3;
+  }
+
+}
 
 .profile-container__name-date {
   flex-grow: 3;
@@ -128,12 +209,12 @@ Desktop: 1440px
   height: 35px;
   width: 35px;
   background-color: var(--lightish-grey-blue);
+  outline: none;
 }
 
 .hidden {
   display: none;
 }
-
 
 /* Share section active */
 
@@ -173,6 +254,37 @@ Desktop: 1440px
   fill: #FFFFFF;
 }
 
+/* Popout share box */
+/* Tablet and greater */
+
+@media (min-width: 768px) {
+
+  .profile-container__share-btn-popout {
+    display: none;
+    align-items: center;
+    position: absolute;
+    background-color: var(--very-dark-grayish-blue);
+    border-radius: 10px;
+    height: 40px;
+    padding: 10px;
+    box-shadow: var(--greyish-blue) 0px 0px 5px;
+  }
+  
+  .visible-pop {
+    display: flex;
+  }
+
+  .arrow {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    display: block;
+    background: var(--very-dark-grayish-blue);
+    transform: rotate(45deg);
+  }
+
+
+}
 
 
 /* Attribution */
